@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emily Susan da Silva — Portfólio Executivo</title>
+<meta name="description" content="Portfólio executivo — AI Architect & Tech Lead, cases de arquitetura e produto" />
+
+<style>
+  :root {
+    --bg: #0f1115;
+    --bg-raised: #171a20;
+    --bg-card: #1b1f27;
+    --ink: #eef0f2;
+    --ink-soft: #a7afba;
+    --ink-faint: #6d7580;
+    --rule: #2a2f38;
+    --accent: #7aa2d4;
+    --accent-strong: #a9c4e8;
+    --ok: #6bbf8a;
+    --ok-bg: rgba(107, 191, 138, 0.12);
+    --warn: #d4a84f;
+    --warn-bg: rgba(212, 168, 79, 0.12);
+    --info: #7a8fd4;
+    --info-bg: rgba(122, 143, 212, 0.12);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f5; --bg-raised: #ffffff; --bg-card: #ffffff;
+      --ink: #1b2027; --ink-soft: #545c66; --ink-faint: #838c96; --rule: #dfe3e0;
+      --accent: #2f5a8c; --accent-strong: #1f4570;
+      --ok: #2f8a5a; --ok-bg: rgba(47, 138, 90, 0.09);
+      --warn: #93701f; --warn-bg: rgba(147, 112, 31, 0.09);
+      --info: #3f4f9c; --info-bg: rgba(63, 79, 156, 0.08);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f7f5; --bg-raised: #ffffff; --bg-card: #ffffff;
+    --ink: #1b2027; --ink-soft: #545c66; --ink-faint: #838c96; --rule: #dfe3e0;
+    --accent: #2f5a8c; --accent-strong: #1f4570;
+    --ok: #2f8a5a; --ok-bg: rgba(47, 138, 90, 0.09);
+    --warn: #93701f; --warn-bg: rgba(147, 112, 31, 0.09);
+    --info: #3f4f9c; --info-bg: rgba(63, 79, 156, 0.08);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1115; --bg-raised: #171a20; --bg-card: #1b1f27;
+    --ink: #eef0f2; --ink-soft: #a7afba; --ink-faint: #6d7580; --rule: #2a2f38;
+    --accent: #7aa2d4; --accent-strong: #a9c4e8;
+    --ok: #6bbf8a; --ok-bg: rgba(107, 191, 138, 0.12);
+    --warn: #d4a84f; --warn-bg: rgba(212, 168, 79, 0.12);
+    --info: #7a8fd4; --info-bg: rgba(122, 143, 212, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+    padding: 0.85rem 1.6rem;
+    background: color-mix(in srgb, var(--bg-raised) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar .name { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.01em; }
+  .topbar .links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .topbar a {
+    font-family: var(--mono); font-size: 0.76rem; color: var(--ink-soft);
+    text-decoration: none; border-bottom: 1px solid transparent;
+  }
+  .topbar a:hover { color: var(--accent-strong); border-color: var(--accent-strong); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 3.5rem 1.6rem 5rem; }
+
+  .hero { margin-bottom: 3.2rem; }
+  .hero .kicker {
+    font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.8rem;
+  }
+  .hero h1 { font-size: clamp(2rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 0.7rem; font-weight: 700; }
+  .hero .contact-row {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
+    font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 1.6rem;
+  }
+  .hero .contact-row span::after { content: "·"; margin-left: 1.1rem; color: var(--ink-faint); }
+  .hero .contact-row span:last-child::after { content: none; }
+  .hero .intro { font-size: 1.02rem; line-height: 1.7; max-width: 68ch; color: var(--ink-soft); }
+  .hero .intro strong { color: var(--ink); font-weight: 600; }
+
+  .section-label {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-faint); display: flex; align-items: center; gap: 0.8rem; margin: 0 0 1.6rem;
+  }
+  .section-label::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+  .cases { display: flex; flex-direction: column; gap: 1.4rem; margin-bottom: 3rem; }
+
+  .case {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.8rem 2rem;
+  }
+  .case[data-status="production"] { border-left-color: var(--ok); }
+  .case[data-status="paused"] { border-left-color: var(--warn); }
+  .case[data-status="concept"] { border-left-color: var(--info); }
+
+  .case-head {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+  }
+  .case-title { font-size: 1.2rem; font-weight: 700; }
+  .case-type {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--ink-faint); white-space: nowrap; padding-top: 0.25rem;
+  }
+  .case-role { font-size: 0.86rem; color: var(--accent); margin-bottom: 1rem; }
+
+  .case p { font-size: 0.94rem; line-height: 1.65; margin: 0 0 0.9rem; color: var(--ink-soft); }
+  .case p:last-of-type { margin-bottom: 0; }
+
+  .case ul { margin: 0 0 1rem; padding-left: 1.15rem; }
+  .case li { font-size: 0.91rem; line-height: 1.6; margin-bottom: 0.4rem; color: var(--ink-soft); }
+  .case li:last-child { margin-bottom: 0; }
+  .case li::marker { color: var(--accent); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0; }
+  .tag {
+    font-family: var(--mono); font-size: 0.7rem; background: var(--bg-raised); color: var(--ink-soft);
+    padding: 0.22rem 0.6rem; border-radius: 20px; border: 1px solid var(--rule);
+  }
+
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--mono); font-size: 0.76rem; padding: 0.4rem 0.75rem; border-radius: 20px;
+    margin-top: 0.9rem;
+  }
+  .status-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; }
+  .case[data-status="production"] .status-pill { background: var(--ok-bg); color: var(--ok); }
+  .case[data-status="production"] .status-pill::before { background: var(--ok); }
+  .case[data-status="paused"] .status-pill { background: var(--warn-bg); color: var(--warn); }
+  .case[data-status="paused"] .status-pill::before { background: var(--warn); }
+  .case[data-status="concept"] .status-pill { background: var(--info-bg); color: var(--info); }
+  .case[data-status="concept"] .status-pill::before { background: var(--info); }
+
+  .case-link {
+    display: inline-block; font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
+    margin-top: 1rem; text-decoration: none; border-bottom: 1px solid currentColor;
+  }
+  .case-link:hover { color: var(--accent-strong); }
+
+  footer.sig {
+    padding-top: 1.4rem; border-top: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media (max-width: 620px) {
+    .topbar { padding: 0.75rem 1.1rem; }
+    main { padding: 2.4rem 1.1rem 3.5rem; }
+    .case { padding: 1.3rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <span class="name">Emily Susan da Silva</span>
+    <div class="links">
+      <a href="mailto:rainhadamidia@gmail.com">rainhadamidia@gmail.com</a>
+      <a href="tel:+5551981337913">+55 51 98133-7913</a>
+      <a href="https://www.linkedin.com/in/rainhadamidia/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="kicker">Portfólio Executivo</div>
+      <h1>AI Architect &amp; Tech Lead</h1>
+      <div class="contact-row">
+        <span>Gravataí, RS — Brasil</span>
+        <span>+55 51 98133-7913</span>
+        <span>rainhadamidia@gmail.com</span>
+        <span>linkedin.com/in/rainhadamidia</span>
+      </div>
+      <p class="intro">
+        Este portfólio reúne <strong>quatro projetos reais</strong> em estágios diferentes — de produto em produção
+        com usuários reais a arquitetura em construção. Cada case descreve o problema, as decisões técnicas tomadas
+        e o estado atual honesto do projeto, sem inflar resultado onde ainda não existe resultado a mostrar.
+      </p>
+    </section>
+
+    <div class="section-label">Cases</div>
+
+    <div class="cases">
+
+      <div class="case" data-status="production">
+        <div class="case-head">
+          <div class="case-title">Iluminnare</div>
+          <div class="case-type">Case técnico completo</div>
+        </div>
+        <div class="case-role">Responsável técnica (consultoria AIOX) — cliente: Luis Felipe, fundador</div>
+        <p>
+          SaaS de diagnóstico comportamental que precisava evoluir de uma base de código pronta (Lovable) para um
+          produto real, com hospedagem e banco de dados próprios, mantendo o app anterior no ar durante a transição.
+        </p>
+        <ul>
+          <li>Migrei a hospedagem completa (Lovable → GitHub próprio + Vercel + Supabase dedicado) sem derrubar o app anterior.</li>
+          <li>Portei o motor de diagnóstico (questionário, pontuação, geração de relatório, PDF e e-mail) de JavaScript puro para TypeScript dentro da aplicação real.</li>
+          <li>Implementei o fluxo completo de produto: onboarding, diagnóstico comportamental, cadastro de projeto, motor de tarefas semanais com liberação sequencial, sistema de pontos e controle de acesso freemium/premium.</li>
+          <li>Conduzi uma auditoria técnica formal (arquitetura, segurança, conformidade, qualidade) sobre o app já em produção com usuários reais, e priorizei os riscos críticos antes de seguir adicionando funcionalidades novas.</li>
+          <li>Corrigi bugs reportados em produção via QA — desde rotas quebradas até lógica de conclusão de tarefas e dados incorretos em painel administrativo.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span>
+          <span class="tag">Supabase (Postgres, Auth, RLS)</span><span class="tag">Vercel</span><span class="tag">Tailwind / shadcn</span>
+        </div>
+        <div class="status-pill">Em produção, com usuários reais</div>
+        <br>
+        <a class="case-link" href="https://iluminnare-mvp.vercel.app/" target="_blank" rel="noopener">iluminnare-mvp.vercel.app →</a>
+      </div>
+
+      <div class="case" data-status="paused">
+        <div class="case-head">
+          <div class="case-title">Postos Radar 360°</div>
+          <div class="case-type">Case de arquitetura &amp; estratégia</div>
+        </div>
+        <div class="case-role">Fundadora &amp; arquiteta do produto</div>
+        <p>
+          Postos de combustível não têm uma ferramenta que unifique operação física (bombas, PDV, maquininhas) com
+          dados e IA para decisão de gestão. Este case documenta o desenho da arquitetura antes da fase de construção.
+        </p>
+        <ul>
+          <li>Defini o modelo de negócio (planos recorrentes por posto) e o roadmap de produto em fases.</li>
+          <li>Conduzi o processo de arquitetura fullstack: Next.js 15 (App Router), Supabase + Drizzle ORM, com estratégia de multi-tenancy via Row Level Security chaveada por organização.</li>
+          <li>Defini padrão Adapter para integrações físicas (bombas, sensores, PDV, maquininhas), evitando acoplamento a um fornecedor específico.</li>
+          <li>Desenhei uma camada de IA transversal e reutilizável entre os módulos do produto, em vez de duplicar lógica por módulo.</li>
+          <li>Modelei cerca de 30 entidades de dados cobrindo a primeira fase do produto.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Next.js 15</span><span class="tag">Supabase</span><span class="tag">Drizzle ORM</span>
+          <span class="tag">Multi-tenancy / RLS</span><span class="tag">Adapter Pattern</span>
+        </div>
+        <div class="status-pill">Em pausa na fase de arquitetura — retomada planejada</div>
+        <br>
+        <a class="case-link" href="https://postos-radar-360-roadmap-rainhadamidia-7026s-projects.vercel.app" target="_blank" rel="noopener">Ver apresentação de roadmap →</a>
+      </div>
+
+      <div class="case" data-status="concept">
+        <div class="case-head">
+          <div class="case-title">Bella On</div>
+          <div class="case-type">Case de produto / concept</div>
+        </div>
+        <div class="case-role">Fundadora &amp; arquiteta do produto</div>
+        <p>
+          Profissionais autônomas de beleza (manicures, esteticistas, cabeleireiras — mercado de 2,3 milhões no
+          Brasil) gerenciam agenda, financeiro e contratos de forma fragmentada, entre WhatsApp, papel e múltiplos
+          apps soltos.
+        </p>
+        <ul>
+          <li>Desenhei o produto em 6 módulos: Agenda Inteligente, Financeiro, Contratos com 1 Toque, IA de Conteúdo, Saúde/Bem-Estar e Fidelização.</li>
+          <li>Estruturei o modelo de planos (gratuito, assinatura mensal, plano vitalício de lançamento) e a estratégia de go-to-market em fases.</li>
+          <li>Produzi demo visual completa (10 telas) validando a proposta de valor antes de investir em desenvolvimento.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Product Design</span><span class="tag">Go-to-Market</span><span class="tag">Supabase (planejado)</span>
+        </div>
+        <div class="status-pill">Demo validada; PRD em construção</div>
+      </div>
+
+      <div class="case" data-status="paused">
+        <div class="case-head">
+          <div class="case-title">Rainha da Mídia OS</div>
+          <div class="case-type">Case de sistema interno</div>
+        </div>
+        <div class="case-role">Fundadora &amp; arquiteta</div>
+        <p>
+          Como consultora operando sozinha, eu precisava de um painel único para controlar projetos, atendimento e
+          pipeline comercial sem depender de várias ferramentas dispersas — então construí o meu próprio sistema
+          operacional de negócio.
+        </p>
+        <ul>
+          <li>Construí a primeira versão (dashboard, CRM/pipeline, central de atendimento com templates, gerador de propostas, financeiro) em HTML/JS para uso imediato.</li>
+          <li>Iniciei a migração para uma segunda versão com stack de produto real (Vite, React, TypeScript, Supabase), incluindo decisão de isolamento de dados por Row Level Security.</li>
+          <li>Defini que o banco de dados dessa v2 seria completamente separado de outros projetos meus, mesmo compartilhando o mesmo padrão de stack — para não misturar dados de negócios diferentes.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Vite</span><span class="tag">React</span><span class="tag">TypeScript</span>
+          <span class="tag">Supabase / RLS</span><span class="tag">Vercel</span>
+        </div>
+        <div class="status-pill">Pausado aguardando infraestrutura de terceiro — sem link público</div>
+      </div>
+
+    </div>
+
+    <footer class="sig">
+      <span>Emily Susan da Silva</span>
+      <span>Portfólio atualizado — jul/2026</span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
